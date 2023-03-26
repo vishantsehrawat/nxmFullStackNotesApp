@@ -10,12 +10,11 @@ const port = process.env.port || 3000;
 const app = express();
 app.use(express.json());
 app.use(cors());
-cors();
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    next()
-})
+// app.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*")
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+//     next()
+// })
 app.use("/user", userRouter); // for user route 
 //for accessing all the protected notes route,we will need middleware which will
 //authorize the request
